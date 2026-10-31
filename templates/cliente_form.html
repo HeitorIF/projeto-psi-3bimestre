@@ -2,7 +2,26 @@
 
 {% block content %}
 <section>
-    <h1>Cadastro de cliente</h1>
-    <p>Formulário em desenvolvimento.</p>
+    <h1>{{ titulo }}</h1>
+    <form method="post">
+        <p>
+            <label>Nome</label><br>
+            <input type="text" name="nome" value="{{ cliente.nome if cliente else '' }}">
+        </p>
+        <p>
+            <label>CPF</label><br>
+            <input type="text" name="cpf" value="{{ cliente.cpf if cliente else '' }}">
+        </p>
+        <p>
+            <label>E-mail</label><br>
+            <input type="email" name="email" value="{{ cliente.email if cliente else '' }}">
+        </p>
+        <p>
+            <label>Telefone</label><br>
+            <input type="text" name="telefone" value="{{ cliente.telefone if cliente else '' }}">
+        </p>
+        <button type="submit">Salvar</button>
+        <a href="{{ url_for('clientes.listar_clientes') }}">Cancelar</a>
+    </form>
 </section>
 {% endblock %}

@@ -3,6 +3,33 @@
 {% block content %}
 <section>
     <h1>Clientes</h1>
-    <p>Lista de clientes em desenvolvimento.</p>
+    <a href="{{ url_for('clientes.novo_cliente') }}">Novo cliente</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.cpf }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.telefone }}</td>
+                <td>
+                    <a href="{{ url_for('clientes.editar_cliente', id=cliente.id) }}">Editar</a>
+                    <form method="post" action="{{ url_for('clientes.excluir_cliente', id=cliente.id) }}">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
 {% endblock %}
