@@ -15,6 +15,16 @@
             </select>
         </p>
         <p>
+            <label>Jogos</label><br>
+            <select name="jogos" multiple size="6" required>
+                {% for jogo in jogos %}
+                    <option value="{{ jogo.id }}" {% if locacao and jogo in locacao.jogos %}selected{% endif %}>
+                        {{ jogo.titulo }}
+                    </option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
             <label>Data de retirada</label><br>
             <input type="date" name="data_retirada" value="{{ locacao.data_retirada if locacao else '' }}">
         </p>

@@ -39,3 +39,9 @@ O que foi feito: Implementação do CRUD de locações, incluindo associação c
 Dificuldade encontrada: Organizar a relação entre cliente e locação sem quebrar a estrutura da tabela principal.
 Como resolvi: Criei o formulário de locação usando o cliente como referência, configurei as rotas de cadastro e atualização e validei a persistência dos dados.
 Próximo passo: Incluir a relação com vários jogos por locação e concluir a lógica completa do empréstimo.
+
+Data: 28/10 - Isaac
+O que foi feito: Ajuste final da locação para permitir a associação de vários jogos em uma mesma reserva.
+Dificuldade encontrada: Trabalhar com a relação N:N entre locações e jogos sem perder a consistência das entradas na tabela intermediária.
+Como resolvi: Configurei o select múltiplo no formulário, atualizei a lista de locações para mostrar os títulos dos jogos e validei a criação e edição da associação.
+Próximo passo: Finalizar os dados iniciais, revisar o projeto e validar a experiência completa do sistema.
