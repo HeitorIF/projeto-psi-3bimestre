@@ -9,3 +9,9 @@ O que foi feito: Criação do esqueleto do Flask e organização das pastas do M
 Dificuldade encontrada: Separar responsabilidades entre modelo, controller e template.
 Como resolvi: A aplicação foi organizada em arquivos específicos para banco, modelos e rotas.
 Próximo passo: Implementar o login e as telas iniciais do sistema.
+
+Data: 14/10 - Heitor
+O que foi feito: Criação da rota de login e do dashboard inicial, além da navegação entre as telas principais.
+Dificuldade encontrada: Dar início ao fluxo do sistema sem misturar a lógica de autenticação com a renderização das páginas.
+Como resolvi: Separei a rota de autenticação em um blueprint e deixei o dashboard com o acesso simples aos dados gerais do sistema.
+Próximo passo: Trabalhar no cadastro de clientes e na persistência no banco.

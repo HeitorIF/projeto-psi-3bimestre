@@ -3,6 +3,16 @@
 {% block content %}
 <section>
     <h1>Login</h1>
-    <p>Estrutura base do sistema de login.</p>
+    <form method="post">
+        <p>
+            <label for="usuario">Usuário:</label><br>
+            <input type="text" id="usuario" name="usuario" value="admin">
+        </p>
+        <p>
+            <label for="senha">Senha:</label><br>
+            <input type="password" id="senha" name="senha" value="123456">
+        </p>
+        <button type="submit">Entrar</button>
+    </form>
 </section>
 {% endblock %}

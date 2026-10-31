@@ -3,6 +3,10 @@
 {% block content %}
 <section>
     <h1>Dashboard</h1>
-    <p>Área reservada para a visão geral do sistema.</p>
+    <ul>
+        <li>Clientes: {{ total_clientes }}</li>
+        <li>Jogos: {{ total_jogos }}</li>
+        <li>Locações: {{ total_locacoes }}</li>
+    </ul>
 </section>
 {% endblock %}
