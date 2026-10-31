@@ -15,3 +15,9 @@ O que foi feito: Criação da rota de login e do dashboard inicial, além da nav
 Dificuldade encontrada: Dar início ao fluxo do sistema sem misturar a lógica de autenticação com a renderização das páginas.
 Como resolvi: Separei a rota de autenticação em um blueprint e deixei o dashboard com o acesso simples aos dados gerais do sistema.
 Próximo passo: Trabalhar no cadastro de clientes e na persistência no banco.
+
+Data: 17/10 - André
+O que foi feito: Definição dos modelos de Cliente, Jogo e Locacao e da relação entre eles.
+Dificuldade encontrada: Organizar corretamente o relacionamento 1:N e o relacionamento N:N sem quebrar a persistência.
+Como resolvi: Estruturei as classes com SQLAlchemy, adicionei a tabela intermediária e configurei os relationship necessários para o banco.
+Próximo passo: Iniciar o CRUD de clientes e validar a criação dos registros no banco.
