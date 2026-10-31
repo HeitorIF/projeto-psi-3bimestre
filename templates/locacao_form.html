@@ -2,7 +2,36 @@
 
 {% block content %}
 <section>
-    <h1>Cadastro de locação</h1>
-    <p>Formulário em desenvolvimento.</p>
+    <h1>{{ titulo }}</h1>
+    <form method="post">
+        <p>
+            <label>Cliente</label><br>
+            <select name="cliente_id">
+                {% for cliente in clientes %}
+                    <option value="{{ cliente.id }}" {% if locacao and locacao.cliente_id == cliente.id %}selected{% endif %}>
+                        {{ cliente.nome }}
+                    </option>
+                {% endfor %}
+            </select>
+        </p>
+        <p>
+            <label>Data de retirada</label><br>
+            <input type="date" name="data_retirada" value="{{ locacao.data_retirada if locacao else '' }}">
+        </p>
+        <p>
+            <label>Data de devolução</label><br>
+            <input type="date" name="data_devolucao" value="{{ locacao.data_devolucao if locacao else '' }}">
+        </p>
+        <p>
+            <label>Status</label><br>
+            <select name="status">
+                <option value="Ativa" {% if locacao and locacao.status == 'Ativa' %}selected{% endif %}>Ativa</option>
+                <option value="Concluída" {% if locacao and locacao.status == 'Concluída' %}selected{% endif %}>Concluída</option>
+                <option value="Atrasada" {% if locacao and locacao.status == 'Atrasada' %}selected{% endif %}>Atrasada</option>
+            </select>
+        </p>
+        <button type="submit">Salvar</button>
+        <a href="{{ url_for('locacoes.listar_locacoes') }}">Cancelar</a>
+    </form>
 </section>
 {% endblock %}

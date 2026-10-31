@@ -3,6 +3,33 @@
 {% block content %}
 <section>
     <h1>Locações</h1>
-    <p>Registro de locações em desenvolvimento.</p>
+    <a href="{{ url_for('locacoes.nova_locacao') }}">Nova locação</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Cliente</th>
+                <th>Retirada</th>
+                <th>Devolução</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for locacao in locacoes %}
+            <tr>
+                <td>{{ locacao.cliente.nome }}</td>
+                <td>{{ locacao.data_retirada }}</td>
+                <td>{{ locacao.data_devolucao }}</td>
+                <td>{{ locacao.status }}</td>
+                <td>
+                    <a href="{{ url_for('locacoes.editar_locacao', id=locacao.id) }}">Editar</a>
+                    <form method="post" action="{{ url_for('locacoes.excluir_locacao', id=locacao.id) }}">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
 {% endblock %}

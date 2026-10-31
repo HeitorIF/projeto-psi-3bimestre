@@ -33,3 +33,9 @@ O que foi feito: Implementação do CRUD de jogos, com cadastro, listagem, ediç
 Dificuldade encontrada: Garantir que os campos de preço e estoque conseguissem ser salvos corretamente no banco e exibidos na listagem.
 Como resolvi: Estruturei as rotas de criação e atualização, configurei os templates de formulário e tabela e validei o fluxo completo de persistência.
 Próximo passo: Trabalhar na área de locações e na associação entre clientes e jogos.
+
+Data: 22/10 - Pedro
+O que foi feito: Implementação do CRUD de locações, incluindo associação com cliente, listagem, edição e exclusão das reservas.
+Dificuldade encontrada: Organizar a relação entre cliente e locação sem quebrar a estrutura da tabela principal.
+Como resolvi: Criei o formulário de locação usando o cliente como referência, configurei as rotas de cadastro e atualização e validei a persistência dos dados.
+Próximo passo: Incluir a relação com vários jogos por locação e concluir a lógica completa do empréstimo.
