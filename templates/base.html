@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Locadora de Jogos</title>
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('auth.login') }}">Login</a>
+        <a href="{{ url_for('dashboard.dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('clientes.listar_clientes') }}">Clientes</a>
+        <a href="{{ url_for('jogos.listar_jogos') }}">Jogos</a>
+        <a href="{{ url_for('locacoes.listar_locacoes') }}">Locações</a>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
