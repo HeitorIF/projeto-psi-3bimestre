@@ -2,7 +2,30 @@
 
 {% block content %}
 <section>
-    <h1>Cadastro de jogo</h1>
-    <p>Formulário em desenvolvimento.</p>
+    <h1>{{ titulo }}</h1>
+    <form method="post">
+        <p>
+            <label>Título</label><br>
+            <input type="text" name="titulo" value="{{ jogo.titulo if jogo else '' }}">
+        </p>
+        <p>
+            <label>Plataforma</label><br>
+            <input type="text" name="plataforma" value="{{ jogo.plataforma if jogo else '' }}">
+        </p>
+        <p>
+            <label>Gênero</label><br>
+            <input type="text" name="genero" value="{{ jogo.genero if jogo else '' }}">
+        </p>
+        <p>
+            <label>Preço do aluguel</label><br>
+            <input type="number" step="0.01" name="preco_aluguel" value="{{ jogo.preco_aluguel if jogo else '' }}">
+        </p>
+        <p>
+            <label>Estoque</label><br>
+            <input type="number" name="estoque" value="{{ jogo.estoque if jogo else '' }}">
+        </p>
+        <button type="submit">Salvar</button>
+        <a href="{{ url_for('jogos.listar_jogos') }}">Cancelar</a>
+    </form>
 </section>
 {% endblock %}

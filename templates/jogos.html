@@ -3,6 +3,35 @@
 {% block content %}
 <section>
     <h1>Jogos</h1>
-    <p>Catálogo de jogos em desenvolvimento.</p>
+    <a href="{{ url_for('jogos.novo_jogo') }}">Novo jogo</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Plataforma</th>
+                <th>Gênero</th>
+                <th>Preço</th>
+                <th>Estoque</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jogo in jogos %}
+            <tr>
+                <td>{{ jogo.titulo }}</td>
+                <td>{{ jogo.plataforma }}</td>
+                <td>{{ jogo.genero }}</td>
+                <td>R$ {{ '%.2f'|format(jogo.preco_aluguel) }}</td>
+                <td>{{ jogo.estoque }}</td>
+                <td>
+                    <a href="{{ url_for('jogos.editar_jogo', id=jogo.id) }}">Editar</a>
+                    <form method="post" action="{{ url_for('jogos.excluir_jogo', id=jogo.id) }}">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </section>
 {% endblock %}

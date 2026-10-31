@@ -27,3 +27,9 @@ O que foi feito: Implementação do CRUD de clientes, incluindo cadastro, listag
 Dificuldade encontrada: Conectar o formulário com a persistência no banco e garantir a atualização correta da tabela.
 Como resolvi: Criei as rotas do blueprint, renderizei os templates de formulário e listagem e validei o fluxo de criação e remoção no banco.
 Próximo passo: Avançar para o módulo de jogos e completar a parte de cadastro do catálogo.
+
+Data: 20/10 - Pedro
+O que foi feito: Implementação do CRUD de jogos, com cadastro, listagem, edição e remoção do catálogo da locadora.
+Dificuldade encontrada: Garantir que os campos de preço e estoque conseguissem ser salvos corretamente no banco e exibidos na listagem.
+Como resolvi: Estruturei as rotas de criação e atualização, configurei os templates de formulário e tabela e validei o fluxo completo de persistência.
+Próximo passo: Trabalhar na área de locações e na associação entre clientes e jogos.
