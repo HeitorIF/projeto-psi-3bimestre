@@ -1,6 +1,6 @@
 from app import app
 from database import db
-from models import Cliente, Jogo, Locacao, LocacaoJogo
+from models import Cliente, Jogo, Locacao
 
 
 def popular_dados():
@@ -18,11 +18,10 @@ def popular_dados():
         db.session.add_all([cliente1, cliente2, jogo1, jogo2, jogo3])
         db.session.commit()
 
-        locacao1 = Locacao(cliente_id=cliente1.id, data_retirada="2026-10-20", data_devolucao="2026-10-27", status="Em andamento")
-        locacao1.jogos.append(jogo1)
-        locacao1.jogos.append(jogo3)
+        locacao1 = Locacao(cliente_id=cliente1.id, data_retirada="2026-10-20", data_devolucao="2026-10-27", status="Ativa")
+        locacao1.jogos.extend([jogo1, jogo3])
 
-        locacao2 = Locacao(cliente_id=cliente2.id, data_retirada="2026-10-22", data_devolucao="2026-10-29", status="Ativa")
+        locacao2 = Locacao(cliente_id=cliente2.id, data_retirada="2026-10-22", data_devolucao="2026-10-29", status="Concluída")
         locacao2.jogos.append(jogo2)
 
         db.session.add_all([locacao1, locacao2])

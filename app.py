@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, redirect, url_for
 
 from controllers import register_blueprints
 from database import db, init_db
@@ -19,7 +19,7 @@ def create_app():
 
     @app.route("/")
     def index():
-        return "Base do projeto em construção"
+        return redirect(url_for("auth.login"))
 
     return app
 

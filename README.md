@@ -31,14 +31,22 @@ A aplicação permite cadastrar clientes, jogos e locações, além de controlar
 1. Crie um ambiente virtual.
 2. Instale as dependências:
    `pip install -r requirements.txt`
-3. Para popular o banco inicial, execute:
+3. Popule o banco com dados iniciais:
    `python seed.py`
 4. Inicie a aplicação:
    `python app.py`
+5. Acesse:
+   - `http://localhost:5000/` → redireciona para a tela de login
+   - `http://localhost:5000/login`
+   - `http://localhost:5000/dashboard`
+
+## Funcionalidades finais
+- Login inicial com fluxo simples e redirecionamento para o dashboard.
+- CRUD completo de clientes.
+- CRUD completo de jogos.
+- CRUD completo de locações.
+- Relacionamento N:N entre locações e jogos.
+- Dashboard com contagem geral do sistema.
 
 ## Declaração de autoria
 Declaro que compreendo o projeto e sou capaz de explicar e alterar suas partes principais.
-
-Uso de IA:
-[ ] Não utilizei IA generativa.
-[ ] Utilizei IA generativa e descrevo abaixo onde e como foi utilizada.
